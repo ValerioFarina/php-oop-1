@@ -33,20 +33,22 @@
         public function setDirector($new_director) {
             $this->director = $new_director;
         }
+
+        public function printProperties() {
+            echo 'Titolo: ' . $this->getTitle() . '<br>';
+            echo 'Anno di uscita: ' . $this->getYear() . '<br>';
+            echo 'Regista: ' . $this->getDirector();
+        }
     };
 
     $movie_1 = new Movie('Star Wars', 1977, 'George Lucas');
     $movie_2 = new Movie('Citizen Kane', 1941, 'Orson Welles');
 
     echo '<h1> Primo film </h1>';
-    echo 'Titolo: ' . $movie_1->getTitle() . '<br>';
-    echo 'Anno di uscita: ' . $movie_1->getYear() . '<br>';
-    echo 'Regista: ' . $movie_1->getDirector();
+    $movie_1->printProperties();
 
     echo '<h1> Secondo film </h1>';
-    echo 'Titolo: ' . $movie_2->getTitle() . '<br>';
-    echo 'Anno di uscita: ' . $movie_2->getYear() . '<br>';
-    echo 'Regista: ' . $movie_2->getDirector();
+    $movie_2->printProperties();
 
 
 
