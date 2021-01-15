@@ -4,9 +4,9 @@
         public $year;
         public $director;
 
-        function __construct($_title, $_year, $_director) {
+        function __construct($_title = 'sconosciuto', $_year = 'sconosciuto', $_director = 'sconosciuto') {
             $this->title = $_title;
-            $this->year = $_year;
+            is_numeric($_year) && $_year>1850 ? $this->year = $_year : $this->year = 'sconosciuto';
             $this->director = $_director;
         }
 
@@ -23,7 +23,9 @@
         }
 
         public function setYear($new_year) {
-            $this->year = $new_year;
+            if(is_numeric($new_year) && $new_year>1850) {
+                $this->year = $new_year;
+            }
         }
 
         public function getDirector() {
